@@ -25,7 +25,7 @@ class CreatePostsTable extends Migration {
             // внешний ключ, ссылается на поле id таблицы users
             $table->foreign('user_id')
                 ->references('id')
-                ->on('brands')
+                ->on('users')
                 ->nullOnDelete();
             // внешний ключ, ссылается на поле id таблицы users
             $table->foreign('published_by')
