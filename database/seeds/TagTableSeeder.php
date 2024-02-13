@@ -9,6 +9,6 @@ class TagTableSeeder extends Seeder {
      */
     public function run() {
         // создать 100 тегов блога
-        factory(App\Tag::class, 100)->create();
+        factory(App\Tag::class, 100)->create()->unique;
     }
 }
