@@ -16,3 +16,20 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+
+/*
+ * Регистрация, вход в ЛК, восстановление пароля
+ */
+Route::group([
+    'as' => 'auth.', // имя маршрута, например auth.index
+    'prefix' => 'auth', // префикс маршрута, например auth/index
+], function () {
+    // форма регистрации
+    Route::get('register', 'Auth\RegisterController@register')
+        ->name('register');
+    // создание пользователя
+    Route::post('register', 'Auth\RegisterController@create')
+        ->name('create');
+});
